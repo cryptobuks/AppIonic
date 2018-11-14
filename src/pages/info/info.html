@@ -1,0 +1,33 @@
+<ion-header>
+  <br>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Informacion</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid center text-center>
+    <ion-row center>
+      <ion-col>
+        <img src="assets/imgs/tramite.png" width="110px;"/>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid center text-center>
+    <ion-row center>
+      <h4><b>Tramite: </b> Radicacion Matricula Moto</h4>
+    </ion-row>
+  </ion-grid>
+  <h5>Requisitos:</h5>
+  <ul *ngFor="let item of requisitos">
+    <li>
+      <p>
+        {{ item.nombre }}
+      </p>
+    </li>
+  </ul>
+</ion-content>
+

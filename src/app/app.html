@@ -1,0 +1,38 @@
+<ion-menu [content]="content">
+  <ion-header style="padding-top: 24px;">
+    <ion-toolbar>
+      <img src="../assets/imgs/trans.png" height="80px">
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list *ngIf="!isLogged()">
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}} <!--<div><ion-icon name="car"></ion-icon></div>-->
+      </button>
+    </ion-list>
+
+    <ion-list *ngIf="isLogged()">
+      <button menuClose ion-item *ngFor="let p of pagesLogged" (click)="openPage(p)">
+        {{p.title}} <!--<div><ion-icon name="car"></ion-icon></div>-->
+      </button>
+    </ion-list>
+
+    <ion-grid center text-center *ngIf="isLogged()">
+      <ion-row center>
+        <ion-col>
+          <button style="height: 33px; width: 115px; background-color: #FAC800;color: black; margin-top: 110px;" ion-button (click)="logout()">
+            Cerrar Sesion
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="true">
+</ion-nav>
+
+
+

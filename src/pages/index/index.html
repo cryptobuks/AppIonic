@@ -1,0 +1,89 @@
+<ion-header>
+  <br>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Servicios</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid center text-center>
+    <ion-row center>
+      <ion-col>
+        <img src="{{imgs.img1}}" style="height: 110px; width: 100%" (click)="toInfo(1)">
+      </ion-col>
+      <ion-col>
+        <img src="{{imgs.img2}}" style="height: 110px; width: 100%" (click)="toInfo(2)">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid center text-center  has-header="true" class="card-background-page">
+    <ion-row center>
+      <ion-col>
+        <div>
+          <img src="../../assets/imgs/5.png" class="img-menu" (click)="toSimit()">
+          <div class="banner">
+            <label class="yellow">Consultar Multas</label>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <img src="../../assets/imgs/7.png" class="img-menu" (click)="toRunt()">
+          <div class="banner">
+            <label class="yellow">Tu Vehiculo</label>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div>
+          <img src="../../assets/imgs/14.png" class="img-menu" (click)="toNovedad()">
+          <div class="banner">
+            <label class="yellow">Reportar Novedad</label>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <img src="../../assets/imgs/12.png" class="img-menu" (click)="toTrafico()">
+          <div class="banner">
+            <label class="yellow">Trafico Curumaní</label>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div>
+          <img src="../../assets/imgs/13.png" class="img-menu" (click)="toHelp()">
+          <div class="banner">
+            <label class="yellow">Centro De Ayuda</label>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <img src="../../assets/imgs/2.png" class="img-menu" (click)="toDerechos()">
+          <div class="banner">
+            <label class="yellow">Derechos de Transito</label>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+    <br>
+    <ion-row center>
+      <ion-col>
+        <img src="../../assets/imgs/fb.svg" height="40px" (click)="toFB()">
+        <img src="../../assets/imgs/insta.png" height="45px" (click)="toInsta()">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+
+

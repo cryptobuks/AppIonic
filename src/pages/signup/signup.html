@@ -1,0 +1,55 @@
+<ion-header>
+  <br>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Registro</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid center text-center>
+    <ion-row center>
+      <ion-col>
+        <img src="assets/imgs/signup.png" width="220px;"/>
+        <br>
+        <label><b>Crea tu cuenta y empieza a disfrutar de todos nuestros servicios en línea.</b></label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <form #signupForm=ngForm (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-input type="text" name="nombres" required [(ngModel)]="form.name" placeholder="Nombre Completo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="email" name="email" required [(ngModel)]="form.email" placeholder="Email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" name="telefono" required [(ngModel)]="form.telefono" placeholder="Telefono"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" name="direccion" required [(ngModel)]="form.direccion" placeholder="Dirección"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" name="placa" [(ngModel)]="form.placa" placeholder="Placa"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="password" (ionBlur)="onValidatePass()" name="password" required [(ngModel)]="form.password" placeholder="Contraseña"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="password" (ionBlur)="onValidatePass()" name="password_confirmation" required [(ngModel)]="form.password_confirmation" placeholder="Confirmar Contraseña"></ion-input>
+    </ion-item>
+    <ion-grid center text-center>
+      <ion-row center>
+        <ion-col>
+          <button style="height: 40px; width: 110px;" ion-button color="dark"
+                  [disabled]="!signupForm.valid">Registrarme
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <br>
+  </form>
+</ion-content>
+

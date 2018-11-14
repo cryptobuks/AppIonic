@@ -1,0 +1,31 @@
+<ion-header>
+  <br>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Contenido del Mensaje</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid center text-center>
+    <ion-row center>
+      <ion-col>
+        <h4><b>Asunto:</b> {{asunto}}</h4>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="banner-chat" item-start>
+    <ion-icon name="quote" item-start style="margin-right: -7px;     transform: rotate(180deg);"></ion-icon>
+    <label class="center-font"><b>Usted:</b> {{pregunta}}</label>
+  </div>
+  <br>
+  <div class="banner-chat-black" item-end>
+    <label class="center-font"><b>Nosotros:</b> {{contenido}}</label>
+    <ion-icon name="quote" item-end style="margin-left: -7px;"></ion-icon>
+  </div>
+
+</ion-content>
+

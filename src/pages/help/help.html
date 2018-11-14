@@ -1,0 +1,102 @@
+<ion-header>
+  <br>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Centro de Ayuda</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid center text-center>
+    <ion-row center>
+      <ion-col>
+        <img src="assets/imgs/helpdesk.png" width="130px;"/>
+        <br>
+        <label>Hola {{user}} ¿En Qué Podemos Ayudarte?</label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <form #novedadForm=ngForm (ngSubmit)="onSubmit()">
+
+    <ion-item *ngIf="isIos" style="padding-left: 9px !important;">
+      <ion-icon class="native-dark" name="navigate" item-start></ion-icon>
+      <label class="font-native">Curumaní, Cesar.</label>
+    </ion-item>
+
+    <ion-item *ngIf="!isIos" style="padding-left: 9px !important;">
+      <ion-icon class="native-dark" name="navigate" item-start style="margin-right: -15px !important; "></ion-icon>
+      <label class="font-native">Curumaní, Cesar.</label>
+    </ion-item>
+
+    <ion-item *ngIf="isIos" style="padding-left: 9px !important;">
+      <ion-icon class="native-dark" name="locate" item-start></ion-icon>
+      <label class="font-native">Carretera Troncal #22-136</label>
+    </ion-item>
+
+    <ion-item *ngIf="!isIos" style="padding-left: 9px !important;">
+      <ion-icon class="native-dark" name="locate" item-start style="margin-right: -15px !important; "></ion-icon>
+      <label class="font-native">Carretera Troncal #22-136</label>
+    </ion-item>
+
+    <ion-item *ngIf="isIos" style="padding-left: 9px !important;">
+      <ion-icon class="native-dark" name="clock" item-start></ion-icon>
+      <label class="font-native">Lun-Vie: 8am a 1pm - 2pm a 5pm</label>
+    </ion-item>
+
+    <ion-item  *ngIf="!isIos" style="padding-left: 9px !important;">
+      <ion-icon class="native-dark" name="clock" item-start style="margin-right: -15px !important; "></ion-icon>
+      <label class="font-native">Lun-Vie: 8am a 1pm - 2pm a 5pm</label>
+    </ion-item>
+
+    <ion-item *ngIf="isIos" style="padding-left: 9px !important;">
+      <ion-icon class="native-dark" name="at" item-start></ion-icon>
+      <label class="font-native">tramites@ettcurumani.com</label>
+    </ion-item>
+
+    <ion-item *ngIf="!isIos" style="padding-left: 9px !important;">
+      <ion-icon class="native-dark" name="at" item-start style="margin-right: -15px !important; "></ion-icon>
+      <label class="font-native">tramites@ettcurumani.com</label>
+    </ion-item>
+
+    <ion-item *ngIf="isIos" style="padding-left: 9px !important;">
+      <ion-icon class="native-dark" name="call" item-start></ion-icon>
+      <label class="font-native">3174384579</label>
+    </ion-item>
+
+    <ion-item *ngIf="!isIos" style="padding-left: 9px !important;">
+      <ion-icon class="native-dark"  name="call" item-start style="margin-right: -15px !important; "></ion-icon>
+      <label class="font-native">3174384579</label>
+    </ion-item>
+
+    <ion-grid center text-center>
+      <ion-row center>
+        <ion-col>
+          <div class="banner-native">
+            <p style="padding-top: 4px">Escriba Aquí Cualquier inquietud </p>
+          </div>
+          <ion-icon name="arrow-down" item-start></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-item>
+      <ion-textarea type="text" name="asunto" required [(ngModel)]="form.asunto" placeholder="Asunto"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-textarea type="text" name="contenido" required [(ngModel)]="form.contenido" placeholder="Su Mensaje.."></ion-textarea>
+    </ion-item>
+    <ion-grid center text-center>
+      <ion-row center>
+        <ion-col>
+          <button style="height: 36px; width: 110px;" ion-button color="dark"
+                  [disabled]="!novedadForm.valid">Enviar
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <br><br><br>
+  </form>
+</ion-content>
+

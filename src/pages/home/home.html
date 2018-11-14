@@ -1,0 +1,61 @@
+<div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+  <div class="flb">
+    <div class="Aligner-item Aligner-item--top"></div>
+    <img src="../../assets/imgs/trans.svg" height="300px">
+    <div class="Aligner-item Aligner-item--bottom"></div>
+  </div>
+</div>
+
+<ion-header>
+  <br>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="page-home">
+  <ion-grid center text-center>
+    <ion-row center>
+      <ion-col>
+        <img src="assets/imgs/trans.png" width="280px;"/>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <form #loginForm=ngForm (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-input type="email" name="email" (focus)="network.isOnline()" required [(ngModel)]="form.email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Contraseña</ion-label>
+      <ion-input type="password" name="password" required [(ngModel)]="form.password"></ion-input>
+    </ion-item>
+    <ion-grid center text-center>
+      <ion-row center>
+        <ion-col>
+          <button style="height: 40px; width: 90px;" ion-button color="dark"
+                  [disabled]="!loginForm.valid">Entrar
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+  <br><br>
+  <ion-grid center text-center>
+    <ion-row center>
+      <ion-col>
+        <label><b>No Tienes Cuenta? </b></label>
+        <button style="height: 33px; width: 105px; background-color: #FAC800; margin-bottom: 12px;" ion-button
+                color="light" id="sendData" (click)="toSignup()">Registrate!
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+
+

@@ -1,0 +1,51 @@
+<ion-header>
+  <br>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Ajuste de la Cuenta</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid center text-center>
+    <ion-row center>
+      <ion-col>
+        <img src="assets/imgs/man.png" width="130px;"/>
+        <br>
+        <label><b>{{nombre}}</b></label>
+        <br>
+        <label>{{email}}</label>
+      </ion-col>
+    </ion-row>
+    <ion-col>
+      <button style="height: 33px; width: 165px; background-color: #FAC800;color: black;"
+              ion-button (click)="toResetPass()">
+        Cambiar Contraseña
+      </button>
+    </ion-col>
+    <br><br>
+    <ion-grid center text-center *ngIf="isLogged()">
+      <ion-row center>
+        <ion-col>
+          <button style="height: 33px; width: 115px; background-color: #FAC800;color: black; margin-top: 110px;"
+                  ion-button (click)="logout()">
+            Cerrar Sesion
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-footer>
+      <ion-row center>
+        <ion-col>
+          <img src="../../assets/imgs/fb.svg" height="40px" (click)="toFB()">
+          <img src="../../assets/imgs/insta.png" height="45px" (click)="toInsta()">
+        </ion-col>
+      </ion-row>
+    </ion-footer>
+
+  </ion-grid>
+</ion-content>
+

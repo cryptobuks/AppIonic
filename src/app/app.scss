@@ -1,0 +1,84 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+.toolbar-background {
+  background-color: #FAC800;
+}
+
+.curumani-color{
+  background-color: #FAC800;
+}
+.ion-md-help {
+  content: url('../assets/imgs/soporte.png') !important;
+  height: 20px;
+}
+
+ios-help{
+  content: url('../assets/imgs/soporte.png') !important;
+  height: 20px;
+}
+
+ios-md-help{
+  content: url('../assets/imgs/soporte.png') !important;
+  height: 20px;
+}
+
+.tabs-md .tab-button[aria-selected=true] .ion-md-help  {
+  content: url('../assets/imgs/soporte_click.png') !important;
+  -webkit-transform: translate3d(0, -2px, 0);
+  transform: translate3d(0, -2px, 0)
+}
+
+.tabs-md .tab-button[aria-selected=true] .ios-md-help  {
+  content: url('../assets/imgs/soporte_click.png') !important;
+  -webkit-transform: translate3d(0, -2px, 0);
+  transform: translate3d(0, -2px, 0)
+}
+
+.tabs-md .tab-button[aria-selected=true] .ios-help {
+  content: url('../assets/imgs/soporte_click.png') !important;
+  -webkit-transform: translate3d(0, -2px, 0);
+  transform: translate3d(0, -2px, 0)
+}
+
+
+.ion-ios-help, .ion-md-help {
+  content: url('../assets/imgs/soporte.png') !important;
+  width: 20px;
+}
+.ion-ios-help-outline {
+  content: url('../assets/imgs/soporte.png') !important;
+  width: 20px;
+}
+
+.ion-ios-help, .ion-md-help[aria-selected=true] {
+  content: url('../assets/imgs/soporte_click.png') !important;
+  width: 20px;
+}
+
+.ion-md-help[aria-selected=true]{
+  content: url('../assets/imgs/soporte_click.png') !important;
+  width: 20px;
+}
+
+.tabs-md .tab-button[aria-selected=true] .ion-md-help  {
+  content: url('../assets/imgs/soporte_click.png') !important;
+  -webkit-transform: translate3d(0, -2px, 0);
+  transform: translate3d(0, -2px, 0)
+}
+
+

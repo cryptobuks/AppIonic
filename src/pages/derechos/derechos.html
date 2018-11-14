@@ -1,0 +1,78 @@
+<ion-header>
+  <br>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Derechos de Transito</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid center text-center *ngIf="query">
+    <ion-row center>
+      <ion-col>
+        <img src="assets/imgs/search.png" width="130px;"/>
+        <br>
+        <br>
+        <label><b>Consulte Sus Derechos de transito</b></label>
+        <br><br>
+        <label><b>Digite Placa O Cedula</b></label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row center>
+      <ion-col>
+        <form #derechosForm=ngForm (ngSubmit)="getDerechos()">
+          <ion-item>
+            <ion-input type="text" name="placa_cedula" required [(ngModel)]="placa_cedula"></ion-input>
+          </ion-item>
+          <br>
+          <button style="height: 40px; width: 110px;" ion-button color="dark"
+                  [disabled]="!derechosForm.valid">Consultar
+          </button>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div *ngIf="!query">
+    <ion-grid center text-center>
+
+      <h5><b>Placa/Cedula:</b> {{placa_cedula.toUpperCase()}} </h5>
+
+    </ion-grid>
+    <table style="width:100%">
+      <thead>
+      <tr>
+        <th>Año</th>
+        <th>Vlr DT</th>
+        <th>Intereses</th>
+        <th>Sistematización</th>
+        <th>Honorarios</th>
+        <th>Total</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of items">
+        <td>{{item.ano}}</td>
+        <td>{{item.valor_dt}}</td>
+        <td>{{item.intereses}}</td>
+        <td>{{item.sistematizacion}}</td>
+        <td>{{item.honorarios}}</td>
+        <td>{{item.total}}</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <br>
+    <ion-grid center text-center>
+      Total A Pagar: <b>{{totalFINAL}}</b>
+    </ion-grid>
+  </div>
+
+
+
+
+</ion-content>
+

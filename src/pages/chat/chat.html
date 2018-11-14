@@ -1,0 +1,43 @@
+<ion-header>
+  <br>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Mensajes</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid center text-center>
+    <ion-row center>
+      <ion-col>
+        <img src="assets/imgs/chat-icon.svg" width="130px;"/>
+        <br>
+        <label><b>Mensajes Pendientes</b></label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <br>
+
+  <ion-grid center text-center>
+    <ion-row center>
+      <ion-col>
+        <br>
+        <label><b>Usted Tiene {{totalMsg}} Mensaje(s) Actualmente.</b></label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list ion-item >
+
+  </ion-list>
+
+  <ion-item *ngFor="let item of items">
+    <ion-icon name="chatbubbles" item-start></ion-icon>
+    {{item.asunto}}
+    <button ion-button item-end style="width: 60px; height: 26px;" (click)="toItem(item)">Ver</button>
+  </ion-item>
+
+</ion-content>
+

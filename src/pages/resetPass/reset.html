@@ -1,0 +1,41 @@
+<ion-header>
+  <br>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Cambiar Contraseña</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid center text-center>
+    <ion-row center>
+      <ion-col>
+        <img src="assets/imgs/reset.png" width="146px;"/>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <form #ResetForm=ngForm (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-input type="password" name="password" (ionBlur)="onValidateResetPass()" required [(ngModel)]="form.password" placeholder="Contraseña Actual"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="password" (ionBlur)="onValidatePass()" name="password" required [(ngModel)]="form.password_new" placeholder="Nueva Contraseña"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="password" (ionBlur)="onValidatePass()" name="password_confirmation" required [(ngModel)]="form.password_confirmation" placeholder="Confirmar Contraseña"></ion-input>
+    </ion-item>
+    <ion-grid center text-center>
+      <ion-row center>
+        <ion-col>
+          <button style="height: 40px; width: 110px;" ion-button color="dark"
+                  [disabled]="!ResetForm.valid">Enviar
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <br>
+  </form>
+</ion-content>
+

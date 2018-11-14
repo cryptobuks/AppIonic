@@ -1,0 +1,40 @@
+<ion-header>
+  <br>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Reportar Novedad</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid center text-center>
+    <ion-row center>
+      <ion-col>
+        <img src="assets/imgs/novedad-body.png" width="130px;"/>
+        <br>
+        <label><b>Reporte su novedad.</b></label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <form #novedadForm=ngForm (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-textarea type="text" name="asunto" required [(ngModel)]="form.asunto" placeholder="Asunto"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-textarea type="text" name="contenido" required [(ngModel)]="form.contenido" placeholder="Novedad.."></ion-textarea>
+    </ion-item>
+    <ion-grid center text-center>
+      <ion-row center>
+        <ion-col>
+          <button style="height: 40px; width: 110px;" ion-button color="dark"
+                  [disabled]="!novedadForm.valid">Reportar
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <br>
+  </form>
+</ion-content>
+
